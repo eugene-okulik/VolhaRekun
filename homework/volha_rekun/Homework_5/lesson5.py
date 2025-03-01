@@ -20,9 +20,9 @@ stroka2 = 'результат операции: 514'
 stroka3 = 'результат работы программы: 9'
 
 # print(stroka1.index((':')))
-print(int((stroka1[stroka1.index(':')+ 1:].strip())) + 10)
-print(int((stroka2[stroka2.index(':')+ 1:].strip())) + 10)
-print(int((stroka3[stroka3.index(':')+ 1:].strip())) + 10)
+print(int((stroka1[stroka1.index(':') + 1:].strip())) + 10)
+print(int((stroka2[stroka2.index(':') + 1:].strip())) + 10)
+print(int((stroka3[stroka3.index(':') + 1:].strip())) + 10)
 
 # Задание 3
 # Даны такие списки:
