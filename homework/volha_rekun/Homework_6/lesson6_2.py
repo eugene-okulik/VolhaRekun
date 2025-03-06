@@ -5,7 +5,7 @@
 # Подсказка: При тестировании своей программы обращайте внимание на числа 3, 5 и 15
 # (точнее на то, что должно быть напечатано вместо них)
 # Последовательность от 1 до 100 можно создать с помощью range(1, 101)
- 
+
 numbers = list(range(1, 101))
 updated_numbers_list = []
 
@@ -15,7 +15,7 @@ for number in numbers:
     elif number % 5 == 0:
         updated_numbers_list.append("Buzz")
     elif number % 3 == 0:
-        updated_numbers_list.append("Fuzz")   
+        updated_numbers_list.append("Fuzz") 
     else:
         updated_numbers_list.append(number)
         
