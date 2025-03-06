@@ -15,7 +15,7 @@ for number in numbers:
     elif number % 5 == 0:
         updated_numbers_list.append("Buzz")
     elif number % 3 == 0:
-        updated_numbers_list.append("Fuzz") 
+        updated_numbers_list.append("Fuzz")
     else:
         updated_numbers_list.append(number)
         
