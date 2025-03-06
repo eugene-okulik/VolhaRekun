@@ -18,6 +18,6 @@ for number in numbers:
         updated_numbers_list.append("Fuzz")
     else:
         updated_numbers_list.append(number)
- 
+
 for updated_number in updated_numbers_list:
     print(updated_number)
