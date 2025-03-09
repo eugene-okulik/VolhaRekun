@@ -15,9 +15,10 @@
 # Главное отличие - выполните всё с использованием функций.
 # Нужно сделать так, чтобы строк кода стало как можно меньше, и не было повторений одного и того же.
 
-def operation_result (stroka):
+def operation_result(stroka):
     number = int(stroka.split()[-1])
     return number + 10
+
 
 print(operation_result('результат операции: 42'))
 print(operation_result('результат операции: 54'))
