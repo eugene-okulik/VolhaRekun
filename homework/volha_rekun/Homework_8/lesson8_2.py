@@ -8,12 +8,14 @@ import sys
 
 sys.set_int_max_str_digits(1000000)
 
+
 def fibonnachi():
     # 0, 1, 1, 2, 3, 5, 8, 13
-    a, b = 0,1
+    a, b = 0, 1
     while True:
         yield a
         a, b = b, a + b
+
 
 gen = fibonnachi()
 for n in range(4):

@@ -22,7 +22,7 @@ bonus = random.choice([True, False])
 original_salary = salary_input
 
 if bonus:
-    random_bonus = random.randint(1,10000)
+    random_bonus = random.randint(1, 10000)
     salary_input = salary_input + random_bonus
 
 print(f"{original_salary}, {bonus} - '${salary_input}'")
