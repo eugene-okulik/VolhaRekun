@@ -1,12 +1,12 @@
 # Задание №1
-# Создайте универсальный декоратор, который можно будет применить к любой функции. 
+# Создайте универсальный декоратор, который можно будет применить к любой функции.
 # Декоратор должен делать следующее: он должен распечатывать слово "finished"после выполнения декорированной функции.
 # Код, использующий этот декоратор может выглядеть, например, так:
 
 # @finish_me
 # def example(text):
 #     print(text)
-    
+
 # example('print me')
 # В результате работы будет такое:
 
@@ -16,14 +16,16 @@
 
 def finish_me(func):
     def wrapper(*args, **kwargs):
-        result = func(*args, **kwargs) # вызываем исходную функцию
+        result = func(*args, **kwargs)  # вызываем исходную функцию
         print("finished")
         return result
     return wrapper
 
+
 @finish_me
 def example(text):
     print("print me")
+
 
 example("print me")
 
@@ -35,7 +37,7 @@ example("print me")
 # @repeat_me
 # def example(text):
 #     print(text)
-    
+
 # example('print me', count=2)
 # В результате работы будет такое:
 
@@ -43,21 +45,24 @@ example("print me")
 
 # print me
 
+
 def repeat_me(func):
     def wrapper(*args, **kwargs):
         count = kwargs.pop('count', 1)
         result = None
         for _ in range(count):
-            result = func(*args, **kwargs) # вызываем исходную функцию
+            result = func(*args, **kwargs)  # вызываем исходную функцию
             print()
         return result
     return wrapper
 
+
 @repeat_me
 def example(text):
     print(text)
-    
+
 example("print me", count=2)
+
 
 # Задание №3
 # Напишите программу: Есть функция которая делает одну из арифметических операций с переданными ей числами
@@ -90,11 +95,12 @@ def calc_me(func):
             func(b, a, '-')
         elif b > a:
             func(a, b, '/')
-        elif a < 0 or b< 0:
+        elif a < 0 or b < 0:
             func(a, b, '*')
 
         return result
     return wrapper
+
 
 @calc_me
 def calc(first=0, second=0, operation="+"):
@@ -107,7 +113,7 @@ def calc(first=0, second=0, operation="+"):
     elif operation == '*':
         print(first * second)
 
-    
+
 calc()
 
 
