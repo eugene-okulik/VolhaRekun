@@ -23,7 +23,7 @@
 class Book:
     material = "бумага"
     naliczie_texta = True
-    
+
     def __init__(self, nazwanie_knigi, awtor, kol_wo_str, ISBN):
         self.nazwanie_knigi = nazwanie_knigi
         self.awtor = awtor
@@ -87,7 +87,7 @@ class Uczebniki(Book):
         self.szkolnij_predmet = szkolnij_predmet
         self.nomer_klassa = nomer_klassa
         self.zadania = zadania
-    
+
     def __str__(self):
         if self.is_reserved is False:
             return (
