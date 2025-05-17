@@ -32,8 +32,13 @@ class Book:
         self.is_reserved = False
 
     def __str__(self):
-        if self.is_reserved == False:
-            return f"Название: {self.nazwanie_knigi}, Автор: {self.awtor}, Кол-во стр: {self.kol_wo_str}, material: {self.material}"
+        if self.is_reserved is False:
+            return (
+                f"Название: {self.nazwanie_knigi}, "
+                f"Автор: {self.awtor}, "
+                f"Кол-во стр: {self.kol_wo_str}, "
+                f"material: {self.material}"
+            )
         else:
             return (
                 f"Название: {self.nazwanie_knigi}, "
@@ -42,6 +47,7 @@ class Book:
                 f"material: {self.material}, "
                 f"зарезервирована"
             )
+
 
 kniga1 = Book("Zima", "awtor1", 63, 3456)
 kniga2 = Book("Vesna", "awtor2", 123, 346)
@@ -74,6 +80,7 @@ print(kniga5)
 
 # Название: Алгебра, Автор: Иванов, страниц: 200, предмет: Математика, класс: 9
 
+
 class Uczebniki(Book):
     def __init__(self, nazwanie_knigi, awtor, kol_wo_str, ISBN, szkolnij_predmet, nomer_klassa, zadania):
         super().__init__(nazwanie_knigi, awtor, kol_wo_str, ISBN)
@@ -82,8 +89,14 @@ class Uczebniki(Book):
         self.zadania = zadania
     
     def __str__(self):
-        if self.is_reserved == False:
-            return f"Название: {self.nazwanie_knigi}, Автор: {self.awtor}, Кол-во стр: {self.kol_wo_str}, предмет: {self.szkolnij_predmet}, номер_класса: {self.nomer_klassa}"
+        if self.is_reserved is False:
+            return (
+                f"Название: {self.nazwanie_knigi}, "
+                f"Автор: {self.awtor}, "
+                f"Кол-во стр: {self.kol_wo_str}, "
+                f"предмет: {self.szkolnij_predmet}, "
+                f"номер_класса: {self.nomer_klassa}"
+            )
         else:
             return (
                 f"Название: {self.nazwanie_knigi}, "
@@ -94,9 +107,10 @@ class Uczebniki(Book):
                 f"зарезервирована"
             )
 
+
 kniga6 = Uczebniki("Matem", "awtor6", 53, 3456, "matem", 6, True)
 kniga7 = Uczebniki("Russkij", "awtor7", 33, 3456, "russkij_jaz", 7, True)
-kniga8 = Uczebniki("Anglijskij", "awtor8", 333, 3456, "anglijskij_jaz",6, True)
+kniga8 = Uczebniki("Anglijskij", "awtor8", 333, 3456, "anglijskij_jaz", 6, True)
 kniga7.is_reserved = True
 
 print(kniga6)
