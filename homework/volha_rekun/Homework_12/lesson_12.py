@@ -6,7 +6,7 @@
 
 
 class Cvetok:
-    def __init__(self, svezest, cvet, dlina, cena,vrema_zhizni):
+    def __init__(self, svezest, cvet, dlina, cena, vrema_zhizni):
         self.svezest = svezest
         self.cvet = cvet
         self.dlina = dlina
@@ -15,16 +15,16 @@ class Cvetok:
 
     def __repr__(self):
         return f"{type(self).__name__}(svezest={self.svezest}, cvet={self.cvet}, dlina={self.dlina}, cena={self.cena})"
-        
+
 
 class Romashka(Cvetok):
-    def __init__(self, svezest, cvet, dlina, cena,vrema_zhizni):
-        super().__init__(svezest, cvet, dlina, cena,vrema_zhizni)
+    def __init__(self, svezest, cvet, dlina, cena, vrema_zhizni):
+        super().__init__(svezest, cvet, dlina, cena, vrema_zhizni)
 
 
 class Vasilok(Cvetok):
-    def __init__(self, svezest, cvet, dlina, cena,vrema_zhizni):
-        super().__init__(svezest, cvet, dlina, cena,vrema_zhizni)
+    def __init__(self, svezest, cvet, dlina, cena, vrema_zhizni):
+        super().__init__(svezest, cvet, dlina, cena, vrema_zhizni)
 
 
 class Buket:
@@ -45,7 +45,7 @@ class Buket:
         else:
             i = 0
             for a in self.cvety:
-                i+= a.vrema_zhizni
+                i += a.vrema_zhizni
             return i / len(self.cvety)
 
 # Позволить сортировку цветов в букете на основе различных параметров(свежесть/цвет/длина стебля/стоимость)(методы)
@@ -63,8 +63,7 @@ class Buket:
     def sort_by_cena_cvetka(self):
         self.cvety.sort(key=lambda i: i.cena)
 
-# Реализовать поиск цветов в букете по каким-нибудь параметрам (например, по среднему времени жизни) (и это тоже метод).  
-
+# Реализовать поиск цветов в букете по каким-нибудь параметрам (например, по среднему времени жизни) (и это тоже метод)
     def svezhije(self):
         rezultat = []
         for i in self.cvety:
@@ -73,11 +72,11 @@ class Buket:
         return rezultat
 
 
-rastenie1 = Romashka(svezest=1, cvet="belyj", dlina=34, cena=155,vrema_zhizni=1)
-rastenie2 = Vasilok(svezest=0, cvet="krasnyj", dlina=14, cena=14,vrema_zhizni=100)
-cvetok3 = Romashka(svezest=2, cvet="seryj", dlina=7, cena=71,vrema_zhizni=15)
+rastenie1 = Romashka(svezest=1, cvet="belyj", dlina=34, cena=155, vrema_zhizni=1)
+rastenie2 = Vasilok(svezest=0, cvet="krasnyj", dlina=14, cena=14, vrema_zhizni=100)
+cvetok3 = Romashka(svezest=2, cvet="seryj", dlina=7, cena=71, vrema_zhizni=15)
 buket1 = Buket([rastenie1, rastenie2, cvetok3])
-#print(buket1.cvety)
+# print(buket1.cvety)
 print(buket1.cena)
 print(buket1.vremya_uviadania)
 
