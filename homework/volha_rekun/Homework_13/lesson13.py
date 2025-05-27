@@ -1,5 +1,5 @@
 import os
-from datetime import datetime,timedelta
+from datetime import datetime, timedelta
 import re
 
 # Нужно прочитать файлик, который лежит в репозитории в моей папке. Здесь: homework/eugene_okulik/hw_13/data.txt
@@ -18,7 +18,7 @@ import re
 base_path = os.path.dirname(__file__)
 file_path = os.path.join(base_path, 'data.txt')
 print(file_path)
-homework_path = os.path.dirname(os.path.dirname(base_path)) #путь до папки Homework
+homework_path = os.path.dirname(os.path.dirname(base_path))  # путь до папки Homework
 teacher_file_path = os.path.join(homework_path, 'eugene_okulik', 'hw_13', 'data.txt')
 print(teacher_file_path)
 
@@ -31,7 +31,7 @@ print(teacher_file_path)
 # 3. 2023-06-12 15:23:45.312167 - распечатать сколько дней назад была эта дата
 
 
-with open(teacher_file_path, encoding ='utf8') as file:
+with open(teacher_file_path, encoding='utf8') as file:
     for index, line in enumerate(file):
         # print(index)
         match = re.search(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d+", line)
@@ -53,6 +53,6 @@ with open(teacher_file_path, encoding ='utf8') as file:
                 date_str = match.group()
                 date_obj = datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S.%f")
                 now = datetime.now()
-                how_many_days_before = (now-date_obj)
+                how_many_days_before = (now - date_obj)
                 print('нашли третью дату:', date_obj)
                 print('сколько дней назад была эта дата?', how_many_days_before)
