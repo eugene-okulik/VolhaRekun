@@ -1,5 +1,5 @@
 -- Создайте студента (student)
-INSERT INTO students (name, second_name, group_id) VALUES ('Volha', 'Rekun', 1)
+INSERT INTO students (name, second_name) VALUES ('Volha', 'Rekun')
 
 -- Создайте несколько книг (books) и укажите, что ваш созданный студент взял их
 INSERT INTO books (title, taken_by_student_id) VALUES ('Python for beginners', 20528)
@@ -8,7 +8,7 @@ INSERT INTO books (title , taken_by_student_id) VALUES ('Magia utra', 20528)
 
 -- Создайте группу (group) и определите своего студента туда
 INSERT INTO `groups` (title, start_date , end_date ) VALUES ('AQA_2025_spring', '01_2025', '06_2025')
-UPDATE students SET group_id = 5237 WHERE name = 'Volha' AND second_name = 'Rekun'
+UPDATE students SET group_id = 5237 WHERE id = 20528
 
 
 -- Создайте несколько учебных предметов (subjects)
