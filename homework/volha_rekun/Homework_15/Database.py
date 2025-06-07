@@ -32,7 +32,7 @@ db = mysql.connect(
 # создаем студента точнее добавляем
 cursor = db.cursor()
 query = "INSERT INTO students(name, second_name) VALUES (%s, %s)"
-values = ('Volha3', 'Rekun3')
+values = ('Volha4', 'Rekun4')
 cursor.execute(query, values)
 student_id = cursor.lastrowid
 db.commit()
@@ -155,8 +155,35 @@ db.commit()
 
 cursor.execute("SELECT * FROM marks WHERE student_id = %s", (student_id,))
 marks = cursor.fetchall()
-for mark_id, value, lesson_id, student_id in marks:
+for mark_id, value, lesson_id, sid in marks:
     print(f'id оценки за урок = {mark_id}, Занятие id = {lesson_id}, Оценка: {value}')
+
+# %%
+# SELECT всех данных о новом студенте
+# Для вашего студента выведите всё, что о нем есть в базе: группа, книги, оценки с названиями занятий и предметов 
+# -- (всё одним запросом с использованием Join)
+
+cursor = db.cursor()
+query = """
+select students.name,
+	   	  students.second_name,
+	   	  groups.title as 'nazvanie_grupy',
+	   	  books.title as 'nazvanie_knigi',
+	   	  subjets.title as 'predmet',
+	 	  lessons.title as 'zaniatie',
+	 	  marks.value as 'ocenka_studenta'
+     from students
+left join `groups` ON students.group_id = `groups`.id
+left join books ON students.id = books.taken_by_student_id
+left join marks ON students.id = marks.student_id
+left join lessons ON lessons.id = marks.lesson_id
+left join subjets ON subjets.id = lessons.subject_id
+where students.id = %s
+"""
+cursor.execute(query, (student_id,))
+result = cursor.fetchall()
+print("все данные по студенту:" , result)
+
 
 # %%
 # Закрытие соединения
